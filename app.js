@@ -15,10 +15,6 @@ const pool = new Pool({
     },
 })
 
-pool.query('SELECT * FROM TABEL', (err, res2) => {
-       console.log(res2);
-})
-
 app.get('/', (req, res) => {
     res.send('Hello World!')
 })
