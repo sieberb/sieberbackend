@@ -91,6 +91,14 @@ app.put('/frituursnacks/:id', (req, res) => {
     res.send("[]")
 })
 
+app.delete('/frituursnacks/delete/:id', (req, res) => {
+    // console.log(req.body);
+    // hier INSERT INTO insteken
+    pool.query("DELETE FROM frituursnacks WHERE id="+req.params.id, (err, res3) => {
+    });
+    res.send("[]")
+})
+
 app.listen(port, () => {
     console.log(`App Server luistert op poort ${port}`)
 })
