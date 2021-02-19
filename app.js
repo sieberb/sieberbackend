@@ -56,7 +56,7 @@ app.post('/frituursnacks/nieuw', (req, res) => {
     // hier INSERT INTO insteken
     pool.query("INSERT INTO frituursnacks(naam, frituurtijd, vegetarisch) VALUES('"+req.body.naam + "', '" + req.body.frituurtijd + "', '" + req.body.vegetarisch+"')", (err, res3) => {
     });
-    res.send('De ' + req.body.naam + ' werd succesvol toegevoegd')
+    res.send("[]")
 })
 
 // ADD SNACK MELISSA'S WAY - template literals
