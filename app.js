@@ -86,7 +86,7 @@ app.get('/test', (req, res) => {
 app.put('/frituursnacks/:id', (req, res) => {
     // console.log(req.body);
     // hier INSERT INTO insteken
-    pool.query("UPDATE frituursnacks SET naam = '"+req.body.naam+"' WHERE id="+req.params.id, (err, res3) => {
+    pool.query("UPDATE frituursnacks SET naam = '"+req.body.naam+"', frituurtijd = '"+req.body.frituurtijd+"', vegetarisch = '"+req.body.vegetarisch+"' WHERE id="+req.params.id, (err, res3) => {
     });
     res.send("[]")
 })
