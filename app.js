@@ -41,6 +41,13 @@ app.get('/lijst', (req, res) => {
     })
 })
 
+// GET SNACK
+app.get('/frituursnacks/:id', (req, res) => {
+    pool.query('SELECT * FROM frituursnacks WHERE id ='+req.params.id, (err, res2) => {
+        res.send(JSON.stringify(res2.rows[0]));
+    })
+})
+
 // GET SNACKS
 app.get('/frituursnacks', (req, res) => {
     // QUERY UITVOEREN
