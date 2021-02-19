@@ -44,7 +44,7 @@ app.get('/lijst', (req, res) => {
 // GET SNACKS
 app.get('/frituursnacks', (req, res) => {
     // QUERY UITVOEREN
-    pool.query('SELECT * FROM frituursnacks', (err, res2) => {
+    pool.query('SELECT * FROM frituursnacks ORDER BY naam', (err, res2) => {
         // console.log(res2);
         res.send(JSON.stringify(res2.rows));
     })
@@ -74,6 +74,14 @@ app.post('/frituursnacks/nieuw', (req, res) => {
 app.get('/test', (req, res) => {
     let arr = ['wesley', 'laura', 'brent'];
     res.send(JSON.stringify(arr));
+})
+
+app.put('/frituursnacks/:id', (req, res) => {
+    // console.log(req.body);
+    // hier INSERT INTO insteken
+    pool.query("UPDATE frituursnacks SET naam = '"+req.body.naam+"' WHERE id="+req.params.id, (err, res3) => {
+    });
+    res.send("[]")
 })
 
 app.listen(port, () => {
